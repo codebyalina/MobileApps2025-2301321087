@@ -48,9 +48,18 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.espresso.core)
+    implementation(libs.androidx.espresso.contrib)
+    implementation(libs.androidx.junit.ktx)
     testImplementation(libs.junit)
+
+    // UI тесты
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation ("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation ("androidx.test.espresso:espresso-core:3.5.1")
+    androidTestImplementation ("androidx.test.espresso:espresso-contrib:3.5.1")
+    androidTestImplementation ("androidx.test.espresso:espresso-intents:3.5.1")
 
     implementation("com.google.android.material:material:1.10.0")
 

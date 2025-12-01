@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="?attr/colorSurface">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +17,7 @@
             android:text="Add New Task"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:textColor="@android:color/black"
+            android:textColor="?attr/colorOnSurface"
             android:gravity="center"
             android:layout_marginBottom="20dp" />
 
@@ -28,13 +29,16 @@
             app:boxCornerRadiusBottomEnd="12dp"
             app:boxCornerRadiusBottomStart="12dp"
             app:boxCornerRadiusTopEnd="12dp"
-            app:boxCornerRadiusTopStart="12dp">
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxBackgroundColor="?attr/colorSurface"
+            app:hintTextColor="?attr/colorOnSurface">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Task Title"
+                android:textColor="?attr/colorOnSurface"
                 android:textSize="16sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -47,7 +51,9 @@
             app:boxCornerRadiusBottomEnd="12dp"
             app:boxCornerRadiusBottomStart="12dp"
             app:boxCornerRadiusTopEnd="12dp"
-            app:boxCornerRadiusTopStart="12dp">
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxBackgroundColor="?attr/colorSurface"
+            app:hintTextColor="?attr/colorOnSurface">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etDescription"
@@ -56,18 +62,19 @@
                 android:gravity="top"
                 android:hint="Task Description"
                 android:inputType="textMultiLine"
+                android:textColor="?attr/colorOnSurface"
                 android:textSize="16sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Priority Selection -->
+        <!-- Priority -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Priority"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:textColor="@android:color/black"
+            android:textColor="?attr/colorOnSurface"
             android:layout_marginBottom="8dp" />
 
         <RadioGroup
@@ -83,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Low"
-                android:textColor="@android:color/black" />
+                android:textColor="?attr/colorOnSurface" />
 
             <com.google.android.material.radiobutton.MaterialRadioButton
                 android:id="@+id/rbMedium"
@@ -91,7 +98,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Medium"
-                android:textColor="@android:color/black" />
+                android:textColor="?attr/colorOnSurface" />
 
             <com.google.android.material.radiobutton.MaterialRadioButton
                 android:id="@+id/rbHigh"
@@ -99,21 +106,19 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="High"
-                android:textColor="@android:color/black" />
+                android:textColor="?attr/colorOnSurface" />
 
         </RadioGroup>
 
-        <!-- Completion Status -->
         <com.google.android.material.checkbox.MaterialCheckBox
             android:id="@+id/cbCompleted"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Mark as completed"
             android:textSize="16sp"
-            android:textColor="@android:color/black"
+            android:textColor="?attr/colorOnSurface"
             android:layout_marginBottom="20dp" />
 
-        <!-- Buttons -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -125,7 +130,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Cancel"
-                android:textColor="#2196F3"
+                android:textColor="?attr/colorPrimary"
                 android:backgroundTint="@android:color/transparent"
                 android:layout_marginEnd="8dp"
                 app:cornerRadius="12dp" />
@@ -136,8 +141,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Save"
-                android:textColor="@android:color/white"
-                android:backgroundTint="#2196F3"
+                android:textColor="?attr/colorOnPrimary"
+                android:backgroundTint="?attr/colorPrimary"
                 android:layout_marginStart="8dp"
                 app:cornerRadius="12dp" />
 
