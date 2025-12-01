@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.mytaskmanager.R
 import com.example.mytaskmanager.data.Task
 import com.example.mytaskmanager.databinding.ItemTaskBinding
+import android.content.Intent
 
 class TaskAdapter(
     private var tasks: List<Task> = emptyList(),
@@ -24,29 +25,38 @@ class TaskAdapter(
             binding.tvTaskTitle.text = task.title
             binding.tvTaskDescription.text = task.description
             binding.tvPriority.text = task.getPriorityText()
-            binding.tvStatus.text = if (task.isCompleted)"Completed" else "Pending"
-
+            binding.tvStatus.text = if (task.isCompleted) "Completed" else "Pending"
             binding.viewPriorityIndicator.setBackgroundColor(task.getPriorityColor().toInt())
 
             val context = binding.root.context
-            if(task.isCompleted){
+            if (task.isCompleted) {
                 binding.tvTaskTitle.setTextColor(ContextCompat.getColor(context, R.color.gray))
                 binding.tvStatus.setTextColor(ContextCompat.getColor(context, R.color.green))
-
-            }else{
+            } else {
                 binding.tvTaskTitle.setTextColor(ContextCompat.getColor(context, R.color.black))
                 binding.tvStatus.setTextColor(ContextCompat.getColor(context, R.color.white))
             }
 
-            binding.root.setOnLongClickListener{
+            binding.root.setOnLongClickListener {
                 onLongItemClick(task)
                 true
             }
-            binding.root.setOnClickListener{
+            binding.root.setOnClickListener {
                 onItemClick(task)
             }
 
+            // Share button
+            binding.btnShareTask.setOnClickListener {
+                val shareText = "Task: ${task.title}\nDescription: ${task.description}"
+                val shareIntent = Intent().apply {
+                    action = Intent.ACTION_SEND
+                    putExtra(Intent.EXTRA_TEXT, shareText)
+                    type = "text/plain"
+                }
+                context.startActivity(Intent.createChooser(shareIntent, "Share Task via"))
+            }
         }
+
 
     }
 

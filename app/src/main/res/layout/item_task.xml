@@ -76,7 +76,14 @@
                     android:background="@drawable/status_bg"
                     android:textColor="@android:color/white"
                     android:layout_marginStart="8dp" />
-
+                <ImageButton
+                    android:id="@+id/btnShareTask"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Share Task"
+                    android:src="@android:drawable/ic_menu_share"
+                    android:layout_gravity="center_vertical"/>
             </LinearLayout>
 
         </LinearLayout>
